@@ -1,13 +1,14 @@
 import re
-
+#interacje sa uzywane do liczenia wystapien "ssh"
 def no_object(line):
     single_object[interation].append('no '+line)
-def no_access_list(line):
-    #szuka line i cyfr a nastepnie jest zamienia na pusty znak
-    without_line = re.sub(' line [1-9]+','',line)
-    access_list[interation].append('no '+without_line)
 def no_object_group(line):
     object_group[interation].append('no '+line)
+def no_access_list(line):
+    #szuka line i cyfr a nastepnie jest zamienia na pusty znak
+    without_line = re.sub(' line [0-9]+','',line)
+    access_list[interation].append('no '+without_line)
+
 
 file_name = input('Provide source file name: ')
 
@@ -41,8 +42,10 @@ with open(file_name+'.txt', 'a') as file_object:
             file_object.write(str(i)+'\n')
         for i in access_list[a]:
             file_object.write(str(i))
+        file_object.write('\n')
         for i in object_group[a]:
             file_object.write(str(i))
+        file_object.write('\n')
         for i in single_object[a]:
             file_object.write(str(i))
         file_object.write("\nend \nwr\n\n")
