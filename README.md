@@ -1,4 +1,4 @@
-# rollback for asa
+# rollback for asa version from 04-Aug-2020
 
 To use this script on Windows you need install the package, ensure you have the latest Windows 10 updates and search the Microsoft Store app for “Python 3.8”
 
